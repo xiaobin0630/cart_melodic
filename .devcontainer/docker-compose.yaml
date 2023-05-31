@@ -1,6 +1,6 @@
 services:
   dev:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
       args:
@@ -9,13 +9,13 @@ services:
     volumes:
       - ../:/workspaces/rknn-toolkit
       - /tmp/.X11-unix:/tmp/.X11-unix
-    devices:
-      - /dev/dxg:/dev/dxg
+    # devices:
+    #   - /dev/dxg:/dev/dxg
     environment:
       - DISPLAY=:0
       - WAYLAND_DISPLAY=wayland-0
     network_mode: host
-    cap_add: 
+    cap_add:
       - SYS_PTRACE
     security_opt:
       - seccomp:unconfined
